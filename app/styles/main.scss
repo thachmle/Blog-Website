@@ -1,0 +1,264 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/bitters/app/assets/stylesheets/base';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+// Custom Styles
+
+$base-body-color: #2CC0B3;
+
+body {
+  background: $base-body-color;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:  #38595E;
+  padding: 0 25px;
+  background-color: #F4733D;
+}
+ 
+ h3 {
+  color:  #F6F7F8;
+ }
+
+.bg {
+width: 100%;
+height: 110px;
+border-radius: 10px;
+box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
+}
+
+input.blog_title {
+  width: 200px;
+  border-radius: 10px;
+  float: left;
+}
+
+input.blog_author {
+  width: 200px;
+  border-radius: 10px;
+  float: right;
+}
+
+.box-author {
+text-align: right;
+margin-bottom: 25px;
+margin-right: 25px;
+}
+
+.box-tags{
+border-top: 1px solid #ddd;
+color: #E3E4E5;
+font-size: 0.8em;
+padding: 11px;
+}
+
+.bgPic {
+width: 717px;
+margin: 0 auto;
+
+}
+.camera {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+input.tags {
+  width: 100px;
+  
+}
+
+input.blog_tags {
+width: 150px;
+border-radius: 5px;
+float: left;
+}
+
+textarea.blog_desc {
+  border-radius: 5px;
+}
+
+.infoContainer {
+  @include outer-container;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  margin-right: 0;
+  margin-right: -34px;
+
+}
+#newBlog{
+  margin: 0 auto;
+}
+
+.blogContainer {
+  @include outer-container;
+  margin-right: 0;
+  margin-right: -34px;
+}
+
+.blogInfo {
+@include span-columns(8);
+padding: 20px;
+border-radius: 10px;
+background-color:   #38595E;
+box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
+
+}
+
+.blogDescription {
+@include span-columns(8);
+padding: 20px 20px 0 20px;
+border-radius: 10px;
+background-color:   #38595E;
+box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
+
+
+}
+
+ul.blog_list li {
+  margin-bottom: 25px;
+}
+
+.attacked a {
+  text-decoration: line-through;
+  color: #2CC0B3;
+}
+
+// Card Styles
+
+ .boxes {
+   @include clearfix;
+ }
+
+ .box {
+
+  //using variables to give color, instead of defining one by one
+   $box-border-color: $base-border-color;
+   $box-border: 1px solid $box-border-color;
+   $box-background: lighten($box-border-color, 10);
+   $box-header-background: $box-background;
+   $box-hover-background: lighten($box-background, 5);
+   $box-image-background: #38595E;
+   $box-image-hover-background: lighten($box-image-background, 5);
+   $box-stats-color: lighten($base-accent-color, 10);
+
+   @include transition (all 0.5s ease-in-out);
+   background-color: $box-background;
+   border-radius: $base-border-radius;
+   border: $box-border;
+   margin-bottom: $base-line-height;
+   box-shadow: 0 2px 4px darken($base-body-color, 10);
+   position: relative;
+
+   .ribbon-wrapper {
+     $ribbon-size: 85px;
+     $ribbon-background: $base-accent-color;
+     @include size($ribbon-size);
+     overflow: hidden;
+     position: absolute;
+     top: -1px;
+     right: -1px;
+
+     .ribbon {
+       font-size: 0.8em;
+       font-weight: 800;
+       text-align: center;
+       @include transform(rotate(45deg));
+       position: relative;
+       padding: 2px 7px;
+       left: -5px;
+       top: 15px;
+       width: 120px;
+       background-color: $ribbon-background;
+       color: white;
+       box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+     }
+   }
+
+   .box-header {
+     @include transition (all 0.2s ease-in-out);
+     background-color: $box-header-background;
+     border-bottom: $box-border;
+     border-radius: $base-border-radius $base-border-radius 0 0;
+     font-weight: bold;
+     color: #2CC0B3;
+     font-size: 2.5em;
+     padding: $base-line-height/3 $gutter/2;
+   }
+
+   .box-copy {
+     padding: $base-line-height/2 $gutter/2;
+     font-size: 1em;
+     line-height: 1em;
+   }
+
+   &:hover {
+     background-color: $box-hover-background;
+
+     .box-image img {
+       background: $box-image-hover-background;
+     }
+
+     .box-header {
+       background-color: $box-hover-background;
+     }
+   }
+
+   .actions {
+     float: right;
+     margin-top: -25px;
+     margin-right: 10px;
+     button {
+       background-color: transparent;
+     }
+   }
+
+   .clearfix {
+     @include clearfix;
+   }
+
+   &:active {
+     background-color: $box-background;
+
+     .box-header {
+       background-color: $box-background;
+     }
+   }
+ }
+
+ button.delete {
+   margin-top: -39px;
+   float: right;
+   background-color:  #F4733D;
+   margin-bottom: 10px;
+   border-radius: 10px;
+   box-shadow: inset 0px 0px 15px black;
+ }
+
+  button.delete:hover {
+   background-color: #2CC0B3;
+ }
+
+ input.submit {
+  float: right;
+  color:  #F6F7F8;
+  background-color: #F4733D;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 15px black;
+ }
+
+ input.submit:hover {
+  background-color:  #2CC0B3;
+ }
+
+ input.update {
+  background-color: #F4733D;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 15px black;
+ }
+  
+ input.update:hover {
+    background-color: #2CC0B3;
+ }
+ 
+.fa {
+  color: #F4733D;
+}

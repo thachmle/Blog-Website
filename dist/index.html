@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Thach's Blog</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+      <div class="infoContainer">
+        <div class="blogInfo">
+          <form action="" id="newBlog">
+            <div class="camera">
+            <i class="fa fa-camera-retro fa-5x"></i>
+            </div>
+            <input type="text" name="blog_title" class="blog_title" placeholder="Blog Title"/>
+            <input type="text" name="blog_author" class="blog_author" placeholder="Author"/>
+            <textarea name="blog_desc" class="blog_desc" cols="30" rows="5" placeholder="Blog Description"></textarea>
+            <input type="text" name="blog_tags" class="blog_tags" placeholder="Tags"/>
+            <input class="submit" type="submit" value="Add Blog"/>
+          </form>
+        </div>
+      </div>
+      <div class="bgPic">
+          <img class="bg" src="bg.jpg"/>
+      </div>    
+      <div class="blogContainer">
+       <div class="blogDescription">
+        <div class="blog_list"></div>
+        <div class="blog_edit"></div>
+       </div>
+      </div>
+
+    <script type="text/x-handlebars-template" id="blog_items">
+      <div class="boxes">
+        {{#each posts}}
+          <div class="box">
+            {{#if read }}
+              <div class="ribbon-wrapper"><div class="ribbon">READ&nbsp;&nbsp;<i class="fa fa-paper-plane"></i></div></div>
+            {{/if}}
+            <div class="box-header">{{ name }}</div>
+            <div class="box-copy"><p>{{ description }}</p></div>
+            <div class="box-tags">{{ tags }}</div>
+            <div class="box-author">{{ author }}</div>
+            <div class="actions">
+              <button class="toggle" id="{{_id}}"><i class="fa fa-check-square-o fa-2x"></i></button>
+              <button class="edit" id="{{_id}}"><i class="fa fa-cog fa-spin fa-2x"></i></button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        {{/each}}
+      </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="blog_single">
+      <h3>Editing</h3><br />
+      <form action="" id="updateForm">
+        <input type="text" value="{{ name }}" class="edit_blog_name" />
+        <textarea class="edit_blog_desc" name="" id="" cols="30" rows="5">{{ description }}</textarea>
+        <input type="text" value="{{ tags }}" class="edit_blog_tags" />
+        <input class="update" type="submit" value="Update/Cancel" />
+        <input type="hidden" value="{{ _id }}" class="blog_id" />
+      </form>
+      <button class="delete">Delete</button>
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
