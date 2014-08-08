@@ -1,4 +1,4 @@
-var BlogEditView = Backbone.View.extend({
+var BlogEditView2 = Backbone.View.extend({
 
   // el:'.blog_edit',
   //className: 'blog_edit', this will create a div inside the page
@@ -12,8 +12,10 @@ var BlogEditView = Backbone.View.extend({
 
   initialize: function (attrs) {
     this.blog = this.collection.get(attrs.postid);
-    this.render();
+    this.collection.on('change', this.render, this);
+    this.collection.on('add',this.render, this);
 
+    this.render();
   },
 
   render: function () {
@@ -49,8 +51,11 @@ var BlogEditView = Backbone.View.extend({
     });
 //saving the items into the server    
     editable.save();
-//navigating back to the default locations, home    
-    window.blog_router.navigate("", { trigger: true }); 
+//Navigating back to the post after the user hit the update button
+    //you can use just $('.blog_id').val()<---the value inside is the object id, so it will be target and pull into your new navigate window
+    //for better practice, use the currentTarget or target for just a single item, currentTarget is incase you use a font icon and then you embed it inside...then you will tell js that where ever you click inside that element...icon or not, it will still run the function....the target is fine if you're using only 1 element.
+    var post_id = $(event.currentTarget).find('.blog_id').val();
+    window.blog_router.navigate('#post/'+post_id, {trigger: true});
     console.log('updateBlog function success');
 
   },

@@ -1,19 +1,20 @@
-var Blog = Backbone.Model.extend({
+var Blog = Parse.Object.extend({
 
-  idAttribute: '_id',
+className: "BlogParse",
+
+  idAttribute: 'objectId',
 
   defaults: {
     name: '',
     description: '',
     author: '',
-    tags: '',
-    read: false
+    tags: [],
+    read: false 
   }
 
 });
 
-var BlogCollection = Backbone.Collection.extend ({
+var BlogCollection = Parse.Collection.extend ({
   model: Blog,
-  url: 'http://tiy-atl-fe-server.herokuapp.com/collections/thachmle',
-  comparator: 'read'
+  // url: 'http://tiy-atl-fe-server.herokuapp.com/collections/thachmle',
 });
