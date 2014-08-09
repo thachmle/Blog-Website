@@ -409,6 +409,8 @@ var BlogRouter = Backbone.Router.extend({
 Parse.initialize("1nRW6DzenPajIq2jNoHeUpYENLL85XbSaMTIgFVR", "BvAbPn4BZngqLZAyQK03bGNW5qnJEh1LCelAGQeh");
 
 
+
+
 //Login
 var currentUser = Parse.User.current();
 if(currentUser){
@@ -420,24 +422,6 @@ if(currentUser){
    
 }
 
-// function validateForm() {
-//     var x = document.forms["user_signup"]["username"].value;
-//      if (x==null || x=="") {
-//         alert("First name must be filled out");
-//         return false;
-//         }
-//     var y = document.forms["user_signup"]["password"].value;
-//      if (y==null || y=="") {
-//         alert("Password must be filled out");
-//         return false;
-//      }
-//     var z = document.forms["user_signup"]["email"].value;
-//       if (z==null || z=="") {
-//         alert("Email must be filled out");
-//         return false;    
-//       }  
-// }
-//in the html, this is define as the form, in the form there is a submit input, and when anywhere in that form the submit is hit...grab all the values of .username, .password and .email
 $('#user_signup').on('submit', function (event){
   event.preventDefault();
 
@@ -447,8 +431,7 @@ $('#user_signup').on('submit', function (event){
         user_pass2 = $(this).find('input[name="password2"]').val(),
         user_email = $(this).find('.email').val();  
 
-if (user_pass !== user_pass2) return alert('Passwords do not match!');
-
+// if (user_pass !== user_pass2) return alert('Passwords do not match!');
 //this is from parse doc
   var user = new Parse.User();
  
@@ -498,8 +481,35 @@ $('#user_login').on('submit', function (event) {
 
 });
 
+function checkPass()
+{
+    var pass1 = $('.password').val();
+    var pass2 = $('.password2').val();
+    if(pass1 == pass2 || pass2 ==''){
+        $(".password2").css("backgroundColor", "white");
+        $('.confirm').hide();   
+    }else{
+        $(".password2").css("backgroundColor", "#ff6666");
+        $('.confirm').show();
+         $('.confirm').html('Does Not Match!');
+    }
+}  
 //end login
 
+//hide placeholder on hover
+$("input").each(
+            function(){
+                $(this).data('holder',$(this).attr('placeholder'));
+
+                $(this).focusin(function(){
+                    $(this).attr('placeholder','');
+                });
+
+                $(this).focusout(function(){
+                    $(this).attr('placeholder',$(this).data('holder'));
+                });
+                
+        });
 // Create an instance of  Collection
 var blog_list = new BlogCollection();
 
