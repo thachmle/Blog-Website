@@ -8,6 +8,7 @@
     <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/vendor.css">
 
@@ -18,61 +19,67 @@
   <body>
 
     <div class="hero-unit">
-      <br/><br/><br/><br/>
-          <div id="clouds">
-      <div class="cloud x1"></div>
-      <div class="cloud x2"></div>
-      <div class="cloud x3"></div>
-      <div class="cloud x4"></div>
-      <div class="cloud x5"></div>
+
+      <div class="container">
+        <br/><br/><br/><br/>
+        <div id="clouds">
+          <div class="cloud x1"></div>
+          <div class="cloud x2"></div>
+          <div class="cloud x3"></div>
+          <div class="cloud x4"></div>
+          <div class="cloud x5"></div>
+        </div>
+       <div class="form_container">
+        <img class="bgsign" src="../images/london.png" alt="">
+          <form id="user_signup">  
+            <input type="text" name="username" class="username" placeholder="  User Name" required/></br>
+            <input type="password" name="password" class="password" placeholder="  Password" required/></br> 
+             <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
+            
+              <div class="confirm"></div>
+
+            <input type="text" name="useremail" class="email" placeholder="Email" required/></br>
+            <input class="s1 pulse" type="submit" value=""/>
+          </form>
+
+          <form id="user_login">  
+            <input type="text" name="username" class="username" placeholder="User Name"/></br>
+            <input type="password" name="password" class="password" placeholder="Password" /></br>
+            <input class="s2 pulse" type="submit" value="" />
+         </form> 
+        </div> 
+        <div class="info">
+          <h1>Let's Blog!</h1> 
+        </div> 
       </div>
-     <div class="form_container">
-      <img class="bgsign" src="../images/london.png" alt="">
-        <form id="user_signup">  
-          <input type="text" name="username" class="username" placeholder="  User Name" required/></br>
-          <input type="password" name="password" class="password" placeholder="  Password" required/></br> 
-           <input type="password" name="password2" class="password2" placeholder="Re-type Password" required/></br> 
-          <input type="text" name="useremail" class="email" placeholder="Email" required/></br>
-          <input class="s1 pulse" type="submit" value=""/>
-        </form>
-        <form id="user_login">  
-          <input type="text" name="username" class="username" placeholder="User Name"/></br>
-          <input type="password" name="password" class="password" placeholder="Password"/></br>
-          <input class="s2 pulse" type="submit" value="" />
-       </form> 
-      </div>
-      <!--   <div class="user_info"></div> -->
-             <div class="user_info grow"></div>
-      <div class="clear"></div>
   </div>
 
-      <div class="infoContainer">
-        <div class="blogInfo">
-          <form action="" id="newBlog">
-            <div class="camera">
-            <a href="#"><i class="fa fa-camera-retro fa-5x"></i></a>
-            </div>
-            <input type="text" name="blog_title" class="blog_title" placeholder="Blog Title"/>
-            <input type="text" name="blog_author" class="blog_Author" placeholder="Author"/> 
-            <textarea name="blog_desc" class="blog_desc" cols="30" rows="5" placeholder="Your Imaginations"></textarea>
-            <input type="text" name="blog_tags" class="blog_tags" placeholder="Tags"/>
-            <input class="submit" type="submit" value="Add Blog"/>
-          </form>
+  <div class="infoContainer">
+    <div class="blogInfo">
+      <form action="" id="newBlog">
+       <div class="user_info"></div>
+        <div class="camera">
+        <a href="#"><i class="fa fa-camera-retro fa-5x"></i></a>
         </div>
-          <div class="bgPic">
-            <img class="bg" src="bg.jpg"/>
-          </div>   
-           <div class="bgPic2">
-            <img class="bg2" src="bg.jpg"/>
-          </div>
-
-          <div class="blogContainer">
-            <div class="blogDescription">
-              <div class="blog_list"></div>
-            </div>
-          </div>
+        <input type="text" name="blog_title" class="blog_title" placeholder="Blog Title"/>
+        <input type="text" name="blog_author" class="blog_Author" placeholder="Author"/> 
+        <textarea name="blog_desc" class="blog_desc" cols="30" rows="5" placeholder="Your Imaginations"></textarea>
+        <input type="text" name="blog_tags" class="blog_tags" placeholder="Tags"/>
+        <input class="submit" type="submit" value="Add Blog"/>
+      </form>
+    </div>
+      <div class="bgPic">
+        <img class="bg" src="bg.jpg"/>
+      </div>   
+      <div class="bgPic2">
+        <img class="bg2" src="bg.jpg"/>
       </div>
-  
+      <div class="blogContainer">
+        <div class="blogDescription">
+          <div class="blog_list"></div>
+        </div>
+      </div>
+  </div>
 
 <!--Main list view, or front page view!-->
     <script type="text/x-handlebars-template" id="blog_items">

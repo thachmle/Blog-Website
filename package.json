@@ -30,7 +30,7 @@
     "wiredep": "^1.4.3"
   },
   "dependencies": {
-    "express": "^4.6.1",
+    "express": "^4.8.2",
     "gzippo": "^0.2.0"
   }
 }
