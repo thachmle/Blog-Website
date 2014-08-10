@@ -238,8 +238,6 @@ var BlogRouter = Backbone.Router.extend({
 
   routes: {
     '' : 'main',
-    //the ":"" helps backbone to let it know it's a placeholder to look for "id", 
-    //dynamic because it is active, the edit down there is active
     'edit/:id' : 'edit',
     'edit2/:id' : 'edit2',
     'post/:id' : 'post',
