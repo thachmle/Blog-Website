@@ -28,9 +28,7 @@
     <!-- endbuild -->
   </head>
   <body>
-
     <div class="hero-unit">
-
       <div class="container">
         <br/><br/><br/><br/>
         <div id="clouds">
@@ -45,14 +43,11 @@
           <form id="user_signup">  
             <input type="text" name="username" class="username" placeholder="  User Name" required/></br>
             <input type="password" name="password" class="password" placeholder="  Password" required/></br> 
-             <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
-            
-              <div class="confirm"></div>
-
+            <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
+            <div class="confirm"></div>
             <input type="text" name="useremail" class="email" placeholder="Email" required/></br>
             <input class="s1 pulse" type="submit" value=""/>
           </form>
-
           <form id="user_login">  
             <input type="text" name="username" class="username" placeholder="User Name"/></br>
             <input type="password" name="password" class="password" placeholder="Password" /></br>
@@ -64,7 +59,6 @@
         </div> 
       </div>
   </div>
-
   <div class="infoContainer">
     <div class="blogInfo">
       <form action="" id="newBlog">
@@ -91,8 +85,7 @@
         </div>
       </div>
   </div>
-
-<!--Main list view, or front page view!-->
+<!--Main list view-->
     <script type="text/x-handlebars-template" id="blog_items">
       <div class="boxes">
         {{#each posts}}
@@ -113,8 +106,7 @@
         {{/each}}
       </div>
     </script>
-
-<!--single page for post only, and has id to copy and pasate the link!-->
+<!--single page for post only-->
     <script type="text/x-handlebars-template" id="blog_single_post">
       <div class="boxes">
           <div class="box">
@@ -130,10 +122,6 @@
           <input type="hidden" value="{{ objectId }}" class="blog_id" />
       </div>
     </script>
-
-<!-- Single page for edit/delete views
-BE SURE TO GIVE INPUT CLASS AND THEN STYLE IT !-->
-
     <script type="text/x-handlebars-template" id="blog_single">
       <h3>Editing</h3><br />
       <form action="" id="updateData">
@@ -146,7 +134,7 @@ BE SURE TO GIVE INPUT CLASS AND THEN STYLE IT !-->
       </form>
       <button class="delete">Delete</button>
     </script>
-
+    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>

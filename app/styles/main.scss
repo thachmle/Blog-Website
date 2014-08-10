@@ -35,7 +35,7 @@ h1 {
   text-align: center;
   float: left;
   width: 570px;
-  margin: 0 auto;
+  margin: 1em 0 0 0;
 }
  h3 {
   color:  #F6F7F8;
@@ -449,11 +449,12 @@ font-size: 28px;
 #user_signup {
 float: left;
 margin: 50px 40px 0 55px;
+position: absolute;
 }
 
 #user_login {
 float: right;
-margin: -170px 10px 0 40px;
+margin: 95px 10px 15px 40px;
 }
 
 
