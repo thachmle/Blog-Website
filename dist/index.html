@@ -17,7 +17,9 @@
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
   <body>
+
     <div class="hero-unit">
+
       <div class="container">
         <div id="clouds">
           <div class="cloud x1"></div>
@@ -31,11 +33,14 @@
           <form id="user_signup">  
             <input type="text" name="username" class="username" placeholder="  User Name" required/></br>
             <input type="password" name="password" class="password" placeholder="  Password" required/></br> 
-            <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
-            <div class="confirm"></div>
+             <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
+            
+              <div class="confirm"></div>
+
             <input type="text" name="useremail" class="email" placeholder="Email" required/></br>
             <input class="s1 pulse" type="submit" value=""/>
           </form>
+
           <form id="user_login">  
             <input type="text" name="username" class="username" placeholder="User Name"/></br>
             <input type="password" name="password" class="password" placeholder="Password" /></br>
@@ -47,10 +52,13 @@
         </div> 
       </div>
   </div>
+
   <div class="infoContainer">
     <div class="blogInfo">
       <form action="" id="newBlog">
-       <div class="user_info"></div>
+       <div class="user_info">
+            <button class='b1 pulse'></button>
+       </div>
         <div class="camera">
         <a href="#"><i class="fa fa-camera-retro fa-5x"></i></a>
         </div>
@@ -73,7 +81,8 @@
         </div>
       </div>
   </div>
-<!--Main list view-->
+
+<!--Main list view, or front page view!-->
     <script type="text/x-handlebars-template" id="blog_items">
       <div class="boxes">
         {{#each posts}}
@@ -94,7 +103,8 @@
         {{/each}}
       </div>
     </script>
-<!--single page for post only-->
+
+<!--single page for post only, and has id to copy and pasate the link!-->
     <script type="text/x-handlebars-template" id="blog_single_post">
       <div class="boxes">
           <div class="box">
@@ -110,6 +120,10 @@
           <input type="hidden" value="{{ objectId }}" class="blog_id" />
       </div>
     </script>
+
+<!-- Single page for edit/delete views
+BE SURE TO GIVE INPUT CLASS AND THEN STYLE IT !-->
+
     <script type="text/x-handlebars-template" id="blog_single">
       <h3>Editing</h3><br />
       <form action="" id="updateData">
@@ -122,7 +136,7 @@
       </form>
       <button class="delete">Delete</button>
     </script>
-    
+
     <script src="scripts/vendor.js"></script>
 
     <script src="scripts/main.js"></script>
