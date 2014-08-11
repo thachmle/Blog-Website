@@ -10,7 +10,7 @@ var BlogPostView = Backbone.View.extend({
 
   render: function () {
     var template = Handlebars.compile($('#blog_single_post').html());
-    var rendered = template(this.bl
+    var rendered = template(this.blog.toJSON());
     this.$el.html(rendered);
     return this;
   },
