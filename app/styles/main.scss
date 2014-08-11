@@ -35,7 +35,7 @@ h1 {
   text-align: center;
   float: left;
   width: 570px;
-  margin: 0 auto;
+  margin: -35px auto;
 }
  h3 {
   color:  #F6F7F8;
@@ -442,19 +442,23 @@ font-size: 28px;
 }
 
 .form_container {
-  height: 90px;
-  margin-top: 80px;
+height: 90px;
+position: absolute;
+margin-top: 80px;
+width: 632px;
 }
 
 
 #user_signup {
 float: left;
-margin: 50px 40px 0 55px;
+position: relative;
+margin: -14em 0em 0em 2.5em;
 }
 
 #user_login {
+position: relative;
 float: right;
-margin: -170px 10px 0 40px;
+margin: -11em 1.2em 0px 0px;
 }
 
 
@@ -558,13 +562,12 @@ margin-right: 4.5em;
 }
 
 .bgsign {
-  position: absolute;
-  z-index: -9;
-  height: 300px;
-  width: 635px;
-  border-radius: 70px;
-  border: 1px solid rgb(127, 0, 0);
-  border: 10px solid rgba(192, 187, 187, 0.6);
+z-index: -9;
+height: 300px;
+width: 635px;
+border-radius: 70px;
+border: 10px solid rgba(192, 187, 187, 0.6);
+position: relative;
 }
 
 ::-webkit-input-placeholder {
@@ -602,11 +605,9 @@ position: absolute;
 .cloud {
   width: 200px; height: 60px;
   background: #fff;
-  
   border-radius: 200px;
   -moz-border-radius: 200px;
   -webkit-border-radius: 200px;
-  
   position: relative; 
 }
 
