@@ -12,6 +12,7 @@ $('#user_signup').on('submit', function (event){
         user_pass = $(this).find('.password').val(),
         user_pass2 = $(this).find('input[name="password2"]').val(),
         user_email = $(this).find('.email').val();  
+
   var user = new Parse.User();
   user.set("username", user_name);
   user.set("password", user_pass);
@@ -31,6 +32,8 @@ $('#user_login').on('submit', function (event) {
   event.preventDefault();
   var user_name = $(this).find('.username').val(),
       user_pass = $(this).find('.password').val();
+
+      
 
   Parse.User.logIn(user_name, user_pass, {
     success: function(user) {
