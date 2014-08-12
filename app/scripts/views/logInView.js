@@ -14,11 +14,6 @@ initialize: function(user) {
 
 render: function() {
 		console.log(this.user);
-	// $('.form_container').hide();
-		// $('input').hide();
-	//you can add class inside there mf
-	// this.$el.html(this.user.get('username') + ' , this cool guy is logged in! <h1>hellow terry, the  man</h1> <button class="b2">AnotherLog</button><button>Logout</button>')
-	// this.$el.html(this.user.get('username')
 		this.$el.html();
 		$('.form_container').hide();
 		$('.infoContainer').show();

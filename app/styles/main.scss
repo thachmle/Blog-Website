@@ -69,11 +69,11 @@ box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
 .bg2 {
 @include span-columns(8);
 @include shift(.1);
+margin-top: 10px;
+margin-bottom: 5px;
 height: 110px;
 border-radius: 10px;
 opacity:.8;
-margin-top: 100px;
-margin-bottom: 5px;
 box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
 }
 
@@ -85,10 +85,10 @@ margin: 0 auto;
 }
 
 .bgPic2 {
+width: 100%;
 float: left;
 display: block;
 margin: 0 auto;
-margin-top: -90px;
 }
 
 input.blog_title {
@@ -388,7 +388,7 @@ box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
 height: 110px;
 border-radius: 10px;
 opacity:.8;
-margin-top: 100px;
+margin-top: 10px;
 margin-bottom: 5px;
 box-shadow: inset 0px 5px 30px black, 0px 5px 45px #38595E;
 }
