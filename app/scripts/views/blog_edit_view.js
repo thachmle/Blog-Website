@@ -1,18 +1,12 @@
 var BlogEditView = Backbone.View.extend({
 
-  // el:'.blog_edit',
-  //className: 'blog_edit', this will create a div inside the page
   events: {
     'submit #updateData' : 'updateBlog',
     'click .delete' : 'deleteBlog'
   },
 
   initialize: function (attrs) {
-    // this.blog = App.blog_list.get(attrs.postid);
-    // this.render();
     this.blog = App.blog_list.get(attrs.postid);
-    // this.collection.on('change', this.render, this);
-    // this.collection.on('add',this.render, this);
     this.render();
   },
 
@@ -43,7 +37,6 @@ var BlogEditView = Backbone.View.extend({
     event.stopPropagation();
     if (window.confirm("Are you sure about this?!")) {
       console.log('you click the deleted button');
-      //if success 
       this.blog.destroy({success: function () {
         App.router.navigate("", { trigger: true }); 
         console.log('delete function success');

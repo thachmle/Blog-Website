@@ -48,12 +48,10 @@ var BlogListView = Backbone.View.extend ({
   },
 
   editPost: function (event) {
-
     event.preventDefault();
     event.stopPropagation();
     var post_id = $(event.currentTarget).attr('id');
     App.router.navigate('#edit/'+ post_id, {trigger: true});
-
   },     
 
   home: function(event) {
@@ -68,7 +66,6 @@ var BlogListView = Backbone.View.extend ({
     var item_clicked = $(event.currentTarget);
     var post_id = $(event.target).attr('id');
     App.router.navigate('#post/'+post_id, {trigger: true});
-
   }
 
 });

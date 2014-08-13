@@ -106,34 +106,33 @@ event.preventDefault();
 
     error: function(user, error) {
          alert("Error: " + error.message);
-
     }
   });
       $(this).trigger('reset');
 }),
 
-   $("input").each(
-            function(){
-                $(this).data('holder',$(this).attr('placeholder'));
-                $(this).focusin(function(){
-                  $(this).attr('placeholder','');
-                });
-                $(this).focusout(function(){
-                  $(this).attr('placeholder',$(this).data('holder'));
-                }); 
-        });
+$("input").each(
+  function(){
+    $(this).data('holder',$(this).attr('placeholder'));
+    $(this).focusin(function(){
+      $(this).attr('placeholder','');
+    });
+    $(this).focusout(function(){
+      $(this).attr('placeholder',$(this).data('holder'));
+    }); 
+});
 
-    function checkPass(){
-    var pass1 = $('.password').val();
-    var pass2 = $('.password2').val();
-    if(pass1 == pass2 || pass2 ==''){
-        $(".password2").css("backgroundColor", "white");
-        $('.confirm').hide();   
-    }else{
-        $(".password2").css("backgroundColor", "#ff6666");
-        $('.confirm').show();
-         $('.confirm').html('Does Not Match!');
-    }
+function checkPass(){
+  var pass1 = $('.password').val();
+  var pass2 = $('.password2').val();
+  if(pass1 == pass2 || pass2 ==''){
+      $(".password2").css("backgroundColor", "white");
+      $('.confirm').hide();   
+  }else{
+      $(".password2").css("backgroundColor", "#ff6666");
+      $('.confirm').show();
+      $('.confirm').html('Does Not Match!');
+  }
 }
 
 

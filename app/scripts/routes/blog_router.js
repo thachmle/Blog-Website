@@ -14,7 +14,6 @@ var BlogRouter = Backbone.Router.extend({
   },
 
   main: function () {
-      
     $('.blogInfo').show();
     $('.bgPic').show();
     $('.bgPic2').hide();
@@ -58,11 +57,6 @@ var BlogRouter = Backbone.Router.extend({
     showUser(App.currentUser);
     var postView = new BlogPostView({  postid: id, collection: App.blog_list});
       this.appView.showView(postView);
-  },
-  //   signInUp: function() {
-  //   if(!App.currentUser) return App.router.navigate('', {trigger: true});
-  //   var signUpIn = new LoggedInView();
-  //     this.appView.showView(signUpIn);
-  // }
+  }
 });
 
