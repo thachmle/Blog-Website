@@ -1,6 +1,6 @@
 var LoggedInView = Backbone.View.extend ({
 
-	el: '.user_info',
+el: '.user_info',
 
 events: {
 
@@ -13,23 +13,23 @@ initialize: function(user) {
 },
 
 render: function() {
-		console.log(this.user);
-		this.$el.html();
 		$('.form_container').hide();
 		$('.infoContainer').show();
 		$('.b1').show();
+		$('.user_info').show();
+		console.log(this.user);
+		this.$el.html();
 },
 
-logout: function (event) {
+logout: function(event) {
 	event.preventDefault();
 	Parse.User.logOut();
 	$('.form_container').show();
 	this.$el.empty();
 	$('.input').show();
-	  $('.infoContainer').hide();
+	$('.infoContainer').hide();
+	App.router.navigate("", { trigger: true }); 
 }
-
-
 	
 });
 

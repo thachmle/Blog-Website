@@ -7,10 +7,7 @@ var BlogEditView2 = Backbone.View.extend({
   },
 
   initialize: function (attrs) {
-    this.blog = this.collection.get(attrs.postid);
-    this.collection.on('change', this.render, this);
-    this.collection.on('add',this.render, this);
-
+    this.blog = App.blog_list.get(attrs.postid);
     this.render();
   },
 
@@ -25,9 +22,7 @@ var BlogEditView2 = Backbone.View.extend({
   updateBlog: function (event) {
     event.preventDefault();
     event.stopPropagation();
-   
-    var editable = this.collection.get($('.blog_id').val());
-    editable.set({
+    this.blog.set({
 //properties that will be pass into the new variable to edit      
       name: $('.edit_blog_name').val(),
       description: $('.edit_blog_desc').val(),
@@ -36,9 +31,9 @@ var BlogEditView2 = Backbone.View.extend({
     });
 
 //saving the items into the server    
-    editable.save();
+    this.blog.save();
     var post_id = $(event.currentTarget).find('.blog_id').val();
-    window.blog_router.navigate('#post/'+post_id, {trigger: true});
+    App.router.navigate('#post/'+post_id, {trigger: true});
     console.log('updateBlog function success');
 
   },
@@ -51,7 +46,7 @@ var BlogEditView2 = Backbone.View.extend({
       console.log('you click the deleted button');
       var editable = this.collection.get($('.blog_id').val());
       editable.destroy({success: function () {
-        window.blog_router.navigate("", { trigger: true }); 
+        App.router.navigate("", { trigger: true }); 
         console.log('delete function success');
       }});
     }

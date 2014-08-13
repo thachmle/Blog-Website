@@ -8,16 +8,24 @@ var BlogListView = Backbone.View.extend ({
   },
 
   initialize: function () {
-    this.render();
-    this.collection.on('change', this.render, this);
-    this.collection.on('add',this.render, this);
-
-  },
+    var self = this;
+    App.blog_list = new BlogCollection();
+    App.blog_list.query = new Parse.Query(Blog);
+    App.blog_list.comparator = function(object){
+      return object.get("read");
+    };
+    App.blog_list.query.equalTo('user', App.currentUser);
+    App.blog_list.on('change', this.render, this); // This watches my collection for when I update a whiskey
+    App.blog_list.on('add', this.render, this); // This watches my collection for when I add a whiskey
+    App.blog_list.fetch().done( function () {
+      self.render();
+  });
+},
 
   render: function () {
-    this.collection.sort();
+    App.blog_list.sort();
     var template = Handlebars.compile($('#blog_items').html());
-    var rendered = template({ posts : this.collection.toJSON() });
+    var rendered = template({ posts : App.blog_list.toJSON() });
     this.$el.html(rendered);
   },
 
@@ -27,7 +35,7 @@ var BlogListView = Backbone.View.extend ({
     event.stopPropagation();
     var item_clicked = $(event.currentTarget);
     var post_id = item_clicked.attr('id');
-    var post = this.collection.get(post_id);
+    var post = App.blog_list.get(post_id);
     var read = post.get('read');
     console.log('post toggled!');
 
@@ -44,14 +52,14 @@ var BlogListView = Backbone.View.extend ({
     event.preventDefault();
     event.stopPropagation();
     var post_id = $(event.currentTarget).attr('id');
-    window.blog_router.navigate('#edit/'+ post_id, {trigger: true});
+    App.router.navigate('#edit/'+ post_id, {trigger: true});
 
   },     
 
   home: function(event) {
   event.preventDefault();
   event.stopPropagation();
-  window.blog_router.navigate("", { trigger: true }); 
+  App.router.navigate("", { trigger: true }); 
   },
 
   viewPost: function(event) {
@@ -59,9 +67,8 @@ var BlogListView = Backbone.View.extend ({
     event.stopPropagation();
     var item_clicked = $(event.currentTarget);
     var post_id = $(event.target).attr('id');
-    window.blog_router.navigate('#post/'+post_id, {trigger: true});
+    App.router.navigate('#post/'+post_id, {trigger: true});
 
   }
-
 
 });
