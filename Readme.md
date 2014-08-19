@@ -5,6 +5,6 @@ Create an application that utilizes Parse.User and user associations and allow f
 3. User Persistence -> if a user is logged in, route to a new view
 4. Show specific user content
 
-Check it live here!! 
+Check it out live !! 
 
 http://thachmle.github.io/Blog/
