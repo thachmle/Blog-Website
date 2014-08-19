@@ -140,6 +140,9 @@ var BlogPostView = Backbone.View.extend({
     var rendered = template(this.blog.toJSON());
     this.$el.html(rendered);
       console.log('the blog post page is rendered and compile with handlebars');
+      $('script[class="box-header"]').hide();
+      $('script[class="box-author"]').hide();
+      $('script[class="box-tags"]').hide();
     return this;
   },
 
@@ -326,6 +329,10 @@ var BlogRouter = Backbone.Router.extend({
 
 
 Parse.initialize("1nRW6DzenPajIq2jNoHeUpYENLL85XbSaMTIgFVR", "BvAbPn4BZngqLZAyQK03bGNW5qnJEh1LCelAGQeh");
+
+// Initialize App & Checking Users
+var App = {};
+App.currentUser = Parse.User.current();
 
 //Login
 var currentUser = Parse.User.current();
