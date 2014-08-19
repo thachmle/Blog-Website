@@ -7,4 +7,4 @@ Create an application that utilizes Parse.User and user associations and allow f
 
 Check it out live !! 
 
-http://thachmle.github.io/Blog/
+http://thachmle.github.io/Blog-Website/
