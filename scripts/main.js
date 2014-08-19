@@ -24,7 +24,7 @@ logout: function (event) {
 	event.preventDefault();
 	Parse.User.logOut();
 	$('.form_container').show();
-	this.$el.empty();
+	// this.$el.empty();
 	$('.input').show();
 	  $('.infoContainer').hide();
 }
