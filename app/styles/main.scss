@@ -525,7 +525,7 @@ left: 135px;
 
 input.s1 {
 background: url('https://rawgit.com/thachmle/Blog/master/app/images/signup.png') no-repeat;
-background: url('/images/signup.png') no-repeat;
+background-image: url('/images/signup.png') no-repeat;
 border: 0;
 display: block;
 height: 27px;
@@ -540,7 +540,7 @@ width: 70px;
 
 input.s2 {
 background:url('https://rawgit.com/thachmle/Blog/master/app/images/login.png') no-repeat;
-background: url('/images/login.png') no-repeat;
+background-image: url('/images/login.png') no-repeat;
 border: 0;
 display: block;
 width: 70px;
@@ -551,7 +551,7 @@ width: 70px;
 
 .b1 {
 background: url('https://rawgit.com/thachmle/Blog/master/app/images/logout.png') no-repeat;
-background: url('/images/logout.png') no-repeat;
+background-image: url('/images/logout.png') no-repeat;
 border: 0;
 width: 70px;
 height: 30px;
