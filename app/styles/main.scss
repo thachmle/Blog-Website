@@ -524,40 +524,41 @@ left: 135px;
 }
 
 input.s1 {
-    background: url('/images/signup.png');
-    border: 0;
-    display: block;
-    height: 27px;
-    width: 70px;
-    &:hover {
-      background-color: transparent;
-    }
-    // &:hover {
-    //   opacity: .9;
-    // }
+background: url('https://raw.githubusercontent.com/thachmle/Blog/gh-pages/images/signup.png');
+background: url('/images/signup.png');
+border: 0;
+display: block;
+height: 27px;
+width: 70px;
+&:hover {
+  background-color: transparent;
+}
+// &:hover {
+//   opacity: .9;
+// }
 }
 
 input.s2 {
-    background: url('/images/login.png') no-repeat;
-    background:url('https://github.com/thachmle/Blog/blob/gh-pages/images/login.png') no-repeat;
-    border: 0;
-    display: block;
-    width: 70px;
-    &:hover {
-      background-color: transparent;
-    }
+background:url('https://raw.githubusercontent.com/thachmle/Blog/gh-pages/images/login.png') no-repeat;
+background: url('/images/signup.png');
+border: 0;
+display: block;
+width: 70px;
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .b1 {
+background: url('https://raw.githubusercontent.com/thachmle/Blog/gh-pages/images/logout.png') no-repeat;
 background: url('/images/logout.png') no-repeat;
-background: url('https://github.com/thachmle/Blog/blob/gh-pages/images/logout.png') no-repeat;
 border: 0;
 width: 70px;
 height: 30px;
 position: absolute;
-&:hover {
-  background-color: transparent;
-}
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .user_info {
@@ -589,15 +590,9 @@ position: relative;
 // :-ms-input-placeholder {  
 //    color: rgb(86,179,192);
 // }
-
-
-
 /*Lets start with the cloud formation rather*/
 
 /*The container will also serve as the SKY*/
-
-
-
 #clouds{
 padding: 185px 0;
 opacity: 0.5;
