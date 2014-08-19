@@ -6,22 +6,21 @@ var BlogRouter = Backbone.Router.extend({
     //dynamic because it is active, the edit down there is active
     'edit/:id' : 'edit',
     'edit2/:id' : 'edit2',
-    'post/:id' : 'post'
-   },
+    'post/:id' : 'post',
+  },
 
   initialize: function() {
-    this.appView = new App.View();
+    this.appView = new AppView();
   },
 
   main: function () {
-    $('.blogInfo').show();
-    $('.bgPic').show();
-    $('.bgPic2').hide();
-    //block for button to log out
-    $('.user_info').show();
-    if(!App.currentUser) return App.router.navigate('', {trigger: true});
-    showUser(App.currentUser);    
-    var listView = new BlogListView({ collection: App.blog_list });
+      
+        $('.user_info').show();
+        $('.blogInfo').show();
+        $('.bgPic').show();
+        $('.bgPic2').hide();
+
+    var listView = new BlogListView({ collection: blog_list });
         this.appView.showView(listView);
   },
 
@@ -29,11 +28,8 @@ var BlogRouter = Backbone.Router.extend({
     $('.blogInfo').hide();
     $('.bgPic').show();
     $('.bgPic2').hide();
-    //block for button to logout
     $('.user_info').hide();
-    if(!App.currentUser) return App.router.navigate('', {trigger: true});
-    showUser(App.currentUser);
-    var editView = new BlogEditView({ postid: id,collection: App.blog_list});
+    var editView = new BlogEditView({  postid: id, collection: blog_list});
         this.appView.showView(editView);
   },
 
@@ -42,9 +38,7 @@ var BlogRouter = Backbone.Router.extend({
     $('.bgPic').show();
     $('.bgPic2').hide();
     $('.user_info').hide();
-    if(!App.currentUser) return App.router.navigate('', {trigger: true});
-    showUser(App.currentUser);
-    var editView2 = new BlogEditView2({  postid: id, collection: App.blog_list});
+    var editView2 = new BlogEditView2({  postid: id, collection: blog_list});
         this.appView.showView(editView2);
   },
 
@@ -53,10 +47,10 @@ var BlogRouter = Backbone.Router.extend({
     $('.blogInfo').hide();
     $('.bgPic').hide();
     $('.user_info').hide();
-    if(!App.currentUser) return App.router.navigate('', {trigger: true});
-    showUser(App.currentUser);
-    var postView = new BlogPostView({  postid: id, collection: App.blog_list});
+    var postView = new BlogPostView({  postid: id,  collection: blog_list});
       this.appView.showView(postView);
   }
+
+
 });
 

@@ -1,9 +1,3 @@
-Create an application that utilizes Parse.User and user associations and allow for the following:
+## Yo, I'm a Readme
 
-1. New User Signup
-2. User Log In/ Log Out
-3. User Persistence -> if a user is logged in, route to a new view
-4. Show specific user content
-5. ACL with parse
-
-
+You should probably update me so people looking at your code have an idea what it is being used for :)

@@ -30,6 +30,7 @@
   <body>
 
     <div class="hero-unit">
+
       <div class="container">
         <div id="clouds">
           <div class="cloud x1"></div>
@@ -44,10 +45,13 @@
             <input type="text" name="username" class="username" placeholder="  User Name" required/></br>
             <input type="password" name="password" class="password" placeholder="  Password" required/></br> 
              <input type="password" name="password2" class="password2" placeholder="Re-type Password" required onkeyup="checkPass(); return false;"/></br> 
-             <div class="confirm"></div>
+            
+              <div class="confirm"></div>
+
             <input type="text" name="useremail" class="email" placeholder="Email" required/></br>
             <input class="s1 pulse" type="submit" value=""/>
           </form>
+
           <form id="user_login">  
             <input type="text" name="username" class="username" placeholder="User Name"/></br>
             <input type="password" name="password" class="password" placeholder="Password" /></br>
@@ -55,7 +59,7 @@
          </form> 
         </div> 
         <div class="info">
-          <h1>Blog It!</h1> 
+          <h1>Let's Blog!</h1> 
         </div> 
       </div>
   </div>
@@ -64,7 +68,7 @@
     <div class="blogInfo">
       <form action="" id="newBlog">
        <div class="user_info">
-          <button class='b1 pulse'></button>
+            <button class='b1 pulse'></button>
        </div>
         <div class="camera">
         <a href="#"><i class="fa fa-camera-retro fa-5x"></i></a>
@@ -126,6 +130,8 @@
           </div>
           <input type="hidden" value="{{ objectId }}" class="blog_id" />
       </div>
+      $('.box-header').hide();
+      $('.box-copy').hide();
     </script>
 
 <!-- Single page for edit/delete views
@@ -154,12 +160,12 @@ BE SURE TO GIVE INPUT CLASS AND THEN STYLE IT !-->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/views/logInView.js"></script>
     <script src="scripts/models/blog_model.js"></script>
     <script src="scripts/views/blog_list_view.js"></script>
     <script src="scripts/views/blog_post_view.js"></script>
     <script src="scripts/views/blog_edit_view.js"></script>
     <script src="scripts/views/blog_edit_view2.js"></script>
-    <script src="scripts/views/logInView.js"></script>
     <script src="scripts/routes/blog_router.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

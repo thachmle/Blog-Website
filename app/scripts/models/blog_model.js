@@ -1,15 +1,6 @@
 var Blog = Parse.Object.extend({
 
-className: "Blog",
-
-  validate: function (attrs) {
-    if (!attrs.name) {
-      return 'Please enter a Whiskey name!';
-    }
-    if(!attrs.description){
-      return 'Please enter a Whiskey description!';
-    }
-  },
+className: "BlogParse",
 
   idAttribute: 'objectId',
 

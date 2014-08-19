@@ -5,7 +5,7 @@ var BlogPostView = Backbone.View.extend({
   },
 
   initialize: function (attrs) {
-    this.blog = App.blog_list.get(attrs.postid);
+    this.blog = this.collection.get(attrs.postid);
     this.render();
     console.log('initialize blogpost');
   },
@@ -15,6 +15,10 @@ var BlogPostView = Backbone.View.extend({
     var rendered = template(this.blog.toJSON());
     this.$el.html(rendered);
       console.log('the blog post page is rendered and compile with handlebars');
+      $('script[class="box-header"]').hide();
+      $('script[class="box-author"]').hide();
+      $('script[class="box-tags"]').hide();
+    return this;
   },
 
     editPost: function (event) {
@@ -22,7 +26,7 @@ var BlogPostView = Backbone.View.extend({
     event.preventDefault();
     event.stopPropagation();
     var post_id = $(event.currentTarget).attr('id');
-    App.router.navigate('#edit2/' + post_id, {trigger: true});
+    window.blog_router.navigate('#edit2/'+ post_id, {trigger: true});
   }  
 
 });
